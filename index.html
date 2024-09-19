@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<script>
+<!-- stuff that makes chrisvacay work	-->
+const today = new Date()
+const tomorrow = new Date(today)
+	tomorrow.setDate(today.getDate()+1);
+var dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+let vacation = "You will get a raise tomorrow, "
+let vacayResult = vacation.concat(tomorrow.toLocaleDateString("en-US", dateOptions))
+
+<!-- to add more options to the array, just add a comma and use either variables or "quoted text" within Array([text]); -->
+function chrisStatus(){
+	var isChrisAvailable = Array(vacayResult);
+	var rand = Math.floor(Math.random()*isChrisAvailable.length);
+    return isChrisAvailable[rand];
+}
+</script>
+</head>
+<h1 id="demo">The script element</h1>
+
+<script>
+document.getElementById("demo").innerText = chrisStatus();
+
+</script> 
+
+</body>
+</html>
